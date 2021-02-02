@@ -35,6 +35,7 @@ def main():
         x += h * f(x, t)
     
     # Graph
+    plt.figure(figsize=(12,12))
     plt.plot(t_euler, x_euler, 'r.', time, exact_x)
     plt.xlabel("t")
     plt.ylabel("x(t)")

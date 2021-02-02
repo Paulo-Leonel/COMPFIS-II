@@ -37,6 +37,7 @@ def main():
         x += k2
     
     # Graph
+    plt.figure(figsize=(12,12))
     plt.plot(t_rk2, x_rk2, 'r.', time, exact_x)
     plt.xlabel("t")
     plt.ylabel("x(t)")

@@ -19,27 +19,30 @@ def main():
 
     c = 1.0  # Constant for the function
 
-    # Exaxt solution
+    # Exact solution
     exact_x = []
     time = np.arange(a, b, exact_h)
     for t in time:
         exact_x.append(exact_sol(t, a, xa, c))
-    
+
     # Euler and Runge-kutta 2 solution
     N_list = []
     for i in range(3, 11):
         N_list.append(2**i)
     
-    meanerror_rk2 = meanerror_euler = []
+    meanerror_rk2 = []
+    meanerror_euler = []
 
     for N in N_list:  # Number of steps for rk2
         h = (b - a) / N  # Size of one step
         x = xa
 
         t_rk2 = np.arange(a, b, h)
-        x_rk2 = x_euler = []
+        x_rk2 = []
+        x_euler = []
         xe = x
-        error_rk2 = error_euler = 0.0
+        error_rk2 = 0.0
+        error_euler = 0.0
 
         for t in t_rk2:
 
@@ -55,9 +58,12 @@ def main():
 
         if N == 128:
             plt.figure(figsize=(12,12))
-            plt.plot(t_rk2, x_rk2, 'gs', t_rk2, x_euler, 'ro', time, exact_x)
+            plt.plot(t_rk2, x_rk2, 'gs', label="Runge-Kutta2")
+            plt.plot(t_rk2, x_euler, 'ro', label="Euler")
+            plt.plot(time, exact_x, label="Exact solution")
             plt.xlabel("t")
             plt.ylabel("x(t)")
+            plt.legend(loc='best', fontsize='xx-large')
             plt.show()
 
         error_rk2 /= len(t_rk2)
@@ -65,10 +71,13 @@ def main():
         meanerror_rk2.append(np.sqrt(error_rk2))
         meanerror_euler.append(np.sqrt(error_euler))
 
+    # Graph
     plt.figure(figsize=(12,12))
-    plt.loglog(N_list, meanerror_rk2, 'gs', N_list, meanerror_euler, 'ro')
+    plt.loglog(N_list, meanerror_rk2, 'gs', label="Runge-Kutta2")
+    plt.loglog(N_list, meanerror_euler, 'ro', label="Euler")
     plt.xlabel("N")
     plt.ylabel("Mean Error")
+    plt.legend(loc='best', fontsize='x-large')
     plt.show()
 
     print((log(meanerror_euler[0])-log(meanerror_euler[len(N_list)-1]))/(log(1024.0)-log(8.0)))
