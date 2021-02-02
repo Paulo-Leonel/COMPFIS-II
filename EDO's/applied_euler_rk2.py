@@ -11,8 +11,8 @@ plt.rcParams["axes.labelsize"] = 16
 def main():
 
     # Constants
-    a = 0.0  # Start of the interval
-    b = 10.0  # Finish of the interval
+    a = 0.0  # Start the interval
+    b = 10.0  # Finish the interval
     xa = 0.0  # Initial condition, x(a)
     exact_N = int(1e3)  # Number of points for the exact solution
     exact_h = (b - a) / exact_N
