@@ -10,7 +10,7 @@ plt.rcParams['axes.labelsize'] = 14
 # Global constants
 g = 9.8  # Standard gravity value
 L = 1.0  # Wire length
-theta_0 = 17*pi/18  # Initial angle
+theta_0 = pi/3  # Initial angle, 
 omega_0 = 0.0  # Initial angular velocity
 
 
@@ -40,11 +40,20 @@ def main():
     for t in time:
         theta_e.append(a*cos(omega*t) + b*sin(omega*t))
     
-    # Graph
+    # Graphing theta
     plt.figure(figsize=(12,12))
-    plt.plot(time, theta_rk4, label='Numrical solution')
+    plt.plot(time, theta_rk4, 'r.', label='Numrical solution')
     plt.plot(time, theta_e, label='Exact solution')
-    plt.legend(loc='best', fontsize='large')
+    plt.legend(loc='best')
+    plt.xlabel('t')
+    plt.ylabel('theta(t)')
+    plt.show()
+
+    # Graphing theta and omega
+    plt.figure(figsize=(12,12))
+    plt.plot(time, theta_rk4, label='Theta(t)')
+    plt.plot(time, omega_rk4, label='Omega(t)')
+    plt.legend(loc='best')
     plt.xlabel('t')
     plt.ylabel('theta(t), omega(t)')
     plt.show()
