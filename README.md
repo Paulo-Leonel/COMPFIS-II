@@ -8,4 +8,4 @@ I am using python for now, but when I get better on other languages, I will try 
 
 * [NumPy](https://numpy.org/ "NumPy")
 * [Matplotlib](https://matplotlib.org/ "Matplotlib")
-* [vpython.org](https://vpython.org "VPython")
+* [VPython](https://vpython.org "VPython")
