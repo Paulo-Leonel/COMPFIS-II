@@ -7,5 +7,5 @@ I am using python for now, but when I get better on other languages, I will try 
 ## Packages used
 
 * [NumPy](https://numpy.org/ "NumPy")
-* [Matplotlib] (https://matplotlib.org/ "Matplotlib")
-* [vpython.org] (https://vpython.org "VPython")
+* [Matplotlib](https://matplotlib.org/ "Matplotlib")
+* [vpython.org](https://vpython.org "VPython")
