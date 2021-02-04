@@ -6,7 +6,7 @@ The methods used for numerical integration is Runge-Kutta.
 * Runge-Kutta 2 (Second-order)
 * Runge-Kutta 4 (fourth-order)
 
-The main idea of the method is using a trial step at the midpoint of an interval to cancel out lower-order error terms. (For further information see in [link](https://mathworld.wolfram.com/Runge-KuttaMethod.html "Math World Wolfram")
+The main idea of the method is using a trial step at the midpoint of an interval to cancel out lower-order error terms. (For further information see in [link](https://mathworld.wolfram.com/Runge-KuttaMethod.html "Math World Wolfram"))
 
 The Runge-methods is really simple and robust and is a good choice for solution of differential equations when combined with an adaptive step-size routine.
 
